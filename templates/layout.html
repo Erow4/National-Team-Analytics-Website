@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>USNT Test Analytics: {% block title %}{% endblock %}</title>
+
+    </head>
+    <body>
+        <section class = "background">
+            <div>
+                <a href="/"> <img class = "title-padding" src = "static/usrowing_oar.png"> <h4 class = "title" >USNT Test Analytics</h4></a>
+            </div>
+            <nav>
+                <div class = "collapse navbar-collapse" id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class = "navbar-nav me-auto mt-2">
+                            <li class = "nav-item" ><a class = "nav-link" href = "/">HOME</a></li>
+                            <li class = "nav-item" ><a class = "nav-link" href = "/data">DATA</a></li>
+                            <li class = "nav-item" ><a class = "nav-link" href = "/quicksearch">QUICKSEARCH</a></li>
+                    </ul>
+                    {% else %}
+                    <ul class="nav-links-index">
+                        <li class = "nav-item" ><a class = "nav-link" id = "login" href="/login">BACK</a></li>
+                        <li class = "nav-item" ><a class = "nav-link"id = "register" href="/register">REGISTER</a></li>
+                    </ul>
+
+                {% endif %}
+                </div>
+            </nav>
+              {% if get_flashed_messages() %}
+            <background>
+                <div class="alert alert-primary mb-0 text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </background>
+
+             {% endif %}
+            <main>
+            {% block main %}{% endblock %}
+            </main>
+
+            {% if session["user_id"] %}
+            <ul class = "nav-links-index">
+                <li class = "nav-item" id = "logout" ><a class = "nav-link" href="/logout">LOG OUT</a></li>
+            </ul>
+            {% endif %}
+
+            <footer >
+                Data from <a href="https://usrowing.org/sports/2021/10/19/nt-erg-testing.aspx">USRowing</a>
+            </footer>
+
+        </section>
+
+    </body>
+
+</html>
+

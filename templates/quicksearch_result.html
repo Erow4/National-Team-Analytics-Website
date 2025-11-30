@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quicksearch
+{% endblock %}
+
+{% block main %}
+
+<div>
+    <h2 class = "title"> Input Request</h2>
+    <form action = "/quicksearch" method = "post" class = "form-control">
+        <select name = "menu" id= "menu">
+            <option disabled selected>Select Request From Menu</option>
+            <option value="time">All: Ordered by time</option>
+            <option value="classification">All: Ordered by Classification</option>
+            <option value="distance_2k">Distance: 2k</option>
+            <option value="distance_6k">Distance: 6k</option>
+            <option value= "event_open_men">Event: Open Men</option>
+            <option value= "event_open_women">Event: Open Women</option>
+            <option value= "event_u23_men">Event: U23 Men</option>
+            <option value= "event_u23_women">Event: U23 Women</option>
+            <option value= "event_u19_men">Event: U19 Men</option>
+            <option value= "event_u19_women">Event: U19 Women</option>
+        </select>
+        <button class="btn" class="form-control" type="submit">Submit</button>
+    </form> <br><br>
+
+        <script>
+            var menu = document.getElementById("menu");
+
+            menu.onclick = function(){
+                return menu
+            }
+        </script>
+
+</div>
+
+<div>
+    <h2 class = "title"> Result </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Athlete</th>
+                <th>Distance</th>
+                <th>Time</th>
+                <th>Classification</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through database entries to display them in table -->
+
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.event }}</td>
+                    <td>{{ row.athlete }}</td>
+                    <td>{{ row.distance }}</td>
+                    <td>{{ row.time }}</td>
+                    <td>{{ row.classification }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

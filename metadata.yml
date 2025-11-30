@@ -1,0 +1,12 @@
+---
+:id: 152919728
+:submitters:
+- :name: Eva Corso Harris
+  :email: evaharris@college.harvard.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2022-12-07 03:56:32.098142000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2022-12-06 19:56:32.098142000 Z
+:status: processed
+:score: 20.0
