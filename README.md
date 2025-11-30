@@ -5,7 +5,7 @@ url: https://youtu.be/nc3260VgfkU
 
 # US National Team Test Analytic Site
 
-This is a multi-page website that lets the user run analytics on USRowing National Team data.
+Created a multi-page website for analyzing USRowing National Team data using Python, JavaScript, HTML, CSS, and SQL. The site allowed users to view ordered data subsets, with a dropdown menu for event/category selection. I processed the data in CSV format, uploaded it to a SQL database via a Python program, and used HTML/CSS for a user-friendly UI. The site executed SQL queries on data from multiple Excel CSVs based on user selections.
 
 ## Terms
 
@@ -58,5 +58,6 @@ NOTE: if there is no value listed for Classification, that means that there is n
 #### 'Quicksearch'
 
 This is the quicksearch page! Use the drop-down menu to select an option to be displayed. By default, all data will be shown, but this will change after a selection has been submitted! There are many options,such as 'Distance: 2k', 'Distance: 6k', 'All: Classification', and many more. After you make a selection, the data will be displayed accordingly!
+
 
 NOTE: if there is no value listed for Classification, that means that there is no Classification for that entry.
